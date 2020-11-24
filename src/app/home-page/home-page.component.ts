@@ -18,6 +18,12 @@ export class HomePageComponent implements OnInit {
       this.todolist.push(valueTodo);
     }
   }
+ /*  deleteTodo(valueTodo: string) {
+    if (valueTodo) {
+      this.todolist = this.todolist.filter(valueTodo);
+
+    }
+  } */
   constructor() { }
 
   ngOnInit(): void {
