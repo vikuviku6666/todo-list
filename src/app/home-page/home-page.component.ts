@@ -8,22 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
  todolist = [
     'Buy bread',
-    'Buy Checken burger',
+    'Buy Chicken burger',
     'Learn Angular 5',
     'Make template on Wordpress',
     'Visited Kfc'
   ];
-  addNewTodo(valueTodo: string) {
-    if (valueTodo) {
-      this.todolist.push(valueTodo);
-    }
-  }
- /*  deleteTodo(valueTodo: string) {
-    if (valueTodo) {
-      this.todolist = this.todolist.filter(valueTodo);
 
-    }
-  } */
   constructor() { }
 
   ngOnInit(): void {
