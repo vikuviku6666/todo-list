@@ -1,31 +1,8 @@
-<div class="header">
-  <h1>Todo-list</h1>
-<span>Home</span> /<span>About</span>
-</div>
+
 
 <div class="main">
- <mat-form-field class="field">
-  <input
-    #valueTodo
-    matInput
-    (keyup.enter)="addNewTodo(valueTodo.value); valueTodo.value = ''"
-    (blur)="addNewTodo(valueTodo.value); valueTodo.value=''"
-    placeholder="Write what you to do"
-  >
-</mat-form-field>
-<button mat-mini-fab (click)="addNewTodo(valueTodo.value)">
-  <i class="material-icons">add</i>
-</button>
-<mat-list  class="todolist">
-  <mat-list-item *ngFor="let todo of todolist; index as i" class="list">
-    <mat-checkbox color='primary'>
-      {{ todo }}
-    </mat-checkbox>
-    <button class="button-remove" mat-mini-fab color="primary">
-          <mat-icon>delete</mat-icon>
-    </button>
-  </mat-list-item>
-</mat-list>
-
+  <app-home-page  [task]="todolist" (deleteTask)="deleteTodo($event)" (addTask)="addTodo($event)"></app-home-page>
 </div>
+<hr>
+
 

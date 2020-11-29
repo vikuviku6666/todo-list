@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MaterialModule } from './material/material.module';
-import { AddtodoComponent } from './addtodo/addtodo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    AddtodoComponent
+    HomePageComponent
+
   ],
   imports: [
     BrowserModule,
