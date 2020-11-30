@@ -16,11 +16,11 @@
   <i class="material-icons">add</i>
 </button>
 <mat-list  class="todolist">
-  <mat-list-item  *ngFor="let todo of task"  class="list">
-    <mat-checkbox (click)="finishTask(this.todo.id)" [style.text-decoration]="lineThrough" color='primary'>
-      {{ todo.title }}
+  <mat-list-item [ngClass]="setClasses()"   *ngFor="let listTodo of task"  class="list">
+    <mat-checkbox  (click)="finishTask(this.listTodo.id)" [style.text-decoration]="lineThrough" color='primary'>
+      {{ listTodo.title }}
     </mat-checkbox>
-    <button (click)="onDelete(this.todo.id)" class="button-remove" mat-mini-fab color="primary">
+    <button (click)="onDelete(this.listTodo.id)" class="button-remove" mat-mini-fab color="primary">
           <mat-icon>delete</mat-icon>
     </button>
   </mat-list-item>

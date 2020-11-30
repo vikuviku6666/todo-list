@@ -21,6 +21,10 @@ export class AppComponent {
       this.todolist.push(todo);
     }
   }
+  onComplete(id: Guid): void {
+  const todo = this.todolist.filter(x => x.id === id)[0];
+  todo.isComplete = true;
+  }
  deleteTodo(id: Guid): void {
   const todo = this.todolist.filter(x => x.id === id)[0];
   const index = this.todolist.indexOf(todo, 0);
