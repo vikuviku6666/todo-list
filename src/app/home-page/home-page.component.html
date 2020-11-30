@@ -16,7 +16,7 @@
   <i class="material-icons">add</i>
 </button>
 <mat-list  class="todolist">
-  <mat-list-item [ngClass]="setClasses()"   *ngFor="let listTodo of task"  class="list">
+  <mat-list-item   *ngFor="let listTodo of task"  class="list">
     <mat-checkbox  (click)="finishTask(this.listTodo.id)" [style.text-decoration]="lineThrough" color='primary'>
       {{ listTodo.title }}
     </mat-checkbox>

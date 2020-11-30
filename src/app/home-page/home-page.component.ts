@@ -10,7 +10,7 @@ import { Guid } from 'guid-typescript';
 })
 export class HomePageComponent implements OnInit {
 
-  @Input() task: Todo;
+  @Input() task!: Todo[];
 
   @Output() addTask = new EventEmitter<string>();
 
@@ -37,13 +37,4 @@ finishTask(id: Guid): void {
   onDelete(id: Guid): void {
     this.deleteTask.emit(id);
   }
-// to set dymnamic classes for line through
-  setClasses(): object{
-    const classes = {
-      task: true,
-      'is-complete': this.task.isComplete
-    };
-    return classes;
-  }
-
 }
