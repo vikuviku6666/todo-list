@@ -37,4 +37,8 @@ finishTask(id: Guid): void {
   onDelete(id: Guid): void {
     this.deleteTask.emit(id);
   }
+
+  toggle(task: any): void {
+    task.isComplete = !task.isComplete;
+  }
 }

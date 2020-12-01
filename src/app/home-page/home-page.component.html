@@ -2,28 +2,32 @@
   <h1>Todo-list</h1>
 <span>Home</span> /<span>About</span>
 </div>
+<br>
+<br>
 <h1>Inputs and Outputs</h1>
 <div class="main">
  <mat-form-field class="field">
   <input
     #valueTodo
     matInput
-    (keyup)= "handleKeyUp(valueTodo.value)"
+    (keyup)= "handleKeyUp(valueTodo.value)" 
     placeholder="Write what you to do"
   >
 </mat-form-field>
-<button mat-mini-fab (click)="addNewTask()">
+<button [disabled]="valueTodo.value == ''" mat-mini-fab (click)="addNewTask();  valueTodo.value = ''">
   <i class="material-icons">add</i>
 </button>
-<mat-list  class="todolist">
-  <mat-list-item   *ngFor="let listTodo of task"  class="list">
-    <mat-checkbox  (click)="finishTask(this.listTodo.id)" [style.text-decoration]="lineThrough" color='primary'>
-      {{ listTodo.title }}
-    </mat-checkbox>
-    <button (click)="onDelete(this.listTodo.id)" class="button-remove" mat-mini-fab color="primary">
-          <mat-icon>delete</mat-icon>
-    </button>
-  </mat-list-item>
-</mat-list>
+<mat-card >
+	<mat-list>
+		<mat-list-item *ngFor="let listTodo of task" >
+			<mat-divider ></mat-divider>
+			<mat-slide-toggle (change)="toggle(listTodo)" [checked]="!!listTodo.isComplete" color="primary">
+				<span [ngClass]="{done:listTodo.isComplete}">{{ listTodo.title }}</span>
+			</mat-slide-toggle>
+			<button  matTooltip="Delete task" matTooltipPosition="above" mat-icon-button (click)="onDelete(this.listTodo.id)" >
+				<mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
+		</button>
+		</mat-list-item>
+	</mat-list>
+</mat-card>
 </div>
-
