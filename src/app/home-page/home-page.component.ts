@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   @Output() completeTask = new EventEmitter<Guid>();
 
   newTextToAddToList = '';
-  lineThrough = '';
+ 
 
   constructor() { }
 

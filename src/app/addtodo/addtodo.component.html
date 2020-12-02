@@ -1,0 +1,11 @@
+ <mat-form-field class="field">
+  <input
+    #valueTodo
+    matInput
+    (keyup)= "handleKeyUp(valueTodo.value)"
+    placeholder="Write what you to do"
+  >
+</mat-form-field>
+<button [disabled]="valueTodo.value == ''" mat-mini-fab (click)="getTodo();  valueTodo.value = ''">
+  <i class="material-icons">add</i>
+</button>
