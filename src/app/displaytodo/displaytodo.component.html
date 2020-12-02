@@ -9,7 +9,7 @@
 			<mat-slide-toggle (change)="toggle(listTodo)" [checked]="!!listTodo.isComplete" color="primary">
 				<span [ngClass]="{done:listTodo.isComplete}">{{ listTodo.title }}</span>
 			</mat-slide-toggle>
-			<button  matTooltip="Delete task" matTooltipPosition="above" mat-icon-button>
+			<button  matTooltip="Delete task" matTooltipPosition="above" mat-icon-button (click)="deleteTodo(this.listTodo.id)">
 				<mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
 		</button>
 		</mat-list-item>

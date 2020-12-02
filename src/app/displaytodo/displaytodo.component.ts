@@ -17,5 +17,12 @@ export class DisplaytodoComponent implements OnInit {
   }
 toggle(task: any): void {
     task.isComplete = !task.isComplete;
+}
+   deleteTodo(id: Guid): void {
+  const todoItem = this.todo.filter(x => x.id === id)[0];
+  const index = this.todo.indexOf(todoItem, 0);
+  if (index > -1) {
+     this.todo.splice(index, 1);
+   }
   }
 }
